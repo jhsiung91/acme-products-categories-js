@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block products %}
+<h2>Products for {{categoryName}}</h2>
+<div>
+    <form method='POST' action='/categories/{{categoryName}}/products/'>
+        <div>
+          <input name='productName' placeholder='product name'/>
+          <button class='btn btn-primary'>Save</button>
+        </div>
+    </form>
+</div>
+
+<ul>
+  {% for product in products %}
+    <li>
+      {{product.name}}
+      <form method='POST' action='/categories/{{categoryName}}/products/{{product.id}}?_method=DELETE'>
+          <button class='btn btn-danger'>Delete</button>
+      </form>
+    </li>
+  {% endfor %}
+</ul>
+
+<form method='POST' action='/categories/{{categoryName}}?_method=DELETE'>
+    <button class='btn btn-danger'>Delete Category</button>
+</form>
+
+{% endblock %}

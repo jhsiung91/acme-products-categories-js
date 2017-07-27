@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block products %}
+<h2>Add Category</h2>
+<div>
+    <form method='POST' action='/categories'>
+        <div>
+          <input name='categoryName' placeholder='category name'/>
+        </div>
+        <div>
+          <button class='btn btn-primary'>Save</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

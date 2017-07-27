@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css' />
+    <h1>Acme Products Categories</h1>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      {% for category in categories %}
+        <li><a href="/categories/{{category}}/products">{{category}}</a></li>
+      {% endfor %}
+    </ul>
+    
+    {% block products %}
+    {% endblock %}
+  
+  </body>
+</html>
